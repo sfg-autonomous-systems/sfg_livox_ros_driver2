@@ -8,46 +8,44 @@
   <author email="dev@livoxtech.com">Livox Dev Team</author>
   <license>MIT</license>
 
+  <!-- Common dependencies for both ROS 1 and ROS 2 -->
   <depend>std_msgs</depend>
   <depend>sensor_msgs</depend>
 
-  <group condition="${ROS_VERSION} == 1">
-    <depend>roscpp</depend>
-    <depend>rospy</depend>
-    <depend>rosbag</depend>
-    <depend>pcl_ros</depend>
+  <!-- ROS 1 specific dependencies -->
+  <depend condition="${ROS_VERSION} == 1">roscpp</depend>
+  <depend condition="${ROS_VERSION} == 1">rospy</depend>
+  <depend condition="${ROS_VERSION} == 1">rosbag</depend>
+  <depend condition="${ROS_VERSION} == 1">pcl_ros</depend>
 
-    <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend condition="${ROS_VERSION} == 1">catkin</buildtool_depend>
 
-    <build_depend>message_generation</build_depend>
+  <build_depend condition="${ROS_VERSION} == 1">message_generation</build_depend>
 
-    <exec_depend>message_runtime</exec_depend>
-  </group>
+  <exec_depend condition="${ROS_VERSION} == 1">message_runtime</exec_depend>
 
-  <group condition="${ROS_VERSION} == 2">
-    <depend>rclcpp</depend>
-    <depend>rclcpp_components</depend>
-    <depend>rcutils</depend>
-    <depend>pcl_conversions</depend>
-    <depend>rcl_interfaces</depend>
-    <depend>libpcl-all-dev</depend>
+  <!-- ROS 2 specific dependencies -->
+  <depend condition="${ROS_VERSION} == 2">rclcpp</depend>
+  <depend condition="${ROS_VERSION} == 2">rclcpp_components</depend>
+  <depend condition="${ROS_VERSION} == 2">rcutils</depend>
+  <depend condition="${ROS_VERSION} == 2">pcl_conversions</depend>
+  <depend condition="${ROS_VERSION} == 2">rcl_interfaces</depend>
+  <depend condition="${ROS_VERSION} == 2">libpcl-all-dev</depend>
 
-    <buildtool_depend>ament_cmake_auto</buildtool_depend>
-    
-    <build_depend>rosidl_default_generators</build_depend>
-    
-    <exec_depend>rosbag2</exec_depend>
-    <exec_depend>rosidl_default_runtime</exec_depend>
+  <buildtool_depend condition="${ROS_VERSION} == 2">ament_cmake_auto</buildtool_depend>
+  
+  <build_depend condition="${ROS_VERSION} == 2">rosidl_default_generators</build_depend>
+  
+  <exec_depend condition="${ROS_VERSION} == 2">rosbag2</exec_depend>
+  <exec_depend condition="${ROS_VERSION} == 2">rosidl_default_runtime</exec_depend>
 
-    <test_depend>ament_lint_auto</test_depend>
-    <test_depend>ament_lint_common</test_depend>
+  <test_depend condition="${ROS_VERSION} == 2">ament_lint_auto</test_depend>
+  <test_depend condition="${ROS_VERSION} == 2">ament_lint_common</test_depend>
 
-    <member_of_group>rosidl_interface_packages</member_of_group>
-  </group>
+  <member_of_group condition="${ROS_VERSION} == 2">rosidl_interface_packages</member_of_group>
 
   <export>
-    <build_type>ament_cmake</build_type>
+    <build_type condition="${ROS_VERSION} == 1">catkin</build_type>
+    <build_type condition="${ROS_VERSION} == 2">ament_cmake</build_type>
   </export>
 </package>
-
-    
