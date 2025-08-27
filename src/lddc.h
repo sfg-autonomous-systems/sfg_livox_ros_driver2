@@ -73,10 +73,10 @@ class Lddc final {
  public:
 #ifdef BUILDING_ROS1
   Lddc(int format, int multi_topic, int data_src, int output_type, double frq,
-      std::string &frame_id, bool lidar_bag, bool imu_bag);
+      std::string &point_cloud_frame_id, std::string &imu_frame_id, bool lidar_bag, bool imu_bag);
 #elif defined BUILDING_ROS2
   Lddc(int format, int multi_topic, int data_src, int output_type, double frq,
-      std::string &frame_id);
+      std::string &point_cloud_frame_id, std::string &imu_frame_id);
 #endif
   ~Lddc();
 
@@ -138,7 +138,8 @@ class Lddc final {
   uint8_t output_type_;
   double publish_frq_;
   uint32_t publish_period_ns_;
-  std::string frame_id_;
+  std::string point_cloud_frame_id_;
+  std::string imu_frame_id_;
 
 #ifdef BUILDING_ROS1
   bool enable_lidar_bag_;
