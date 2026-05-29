@@ -9,6 +9,7 @@ Livox ROS Driver 2 is the 2nd-generation driver package used to connect LiDAR pr
   * Ubuntu 18.04 for ROS Melodic;
   * Ubuntu 20.04 for ROS Noetic and ROS2 Foxy;
   * Ubuntu 22.04 for ROS2 Humble;
+  * Ubuntu 24.04 for ROS 2 Jazzy;
 
   **Tips:**
 
@@ -29,6 +30,10 @@ For ROS2 Foxy installation, please refer to:
 
 For ROS2 Humble installation, please refer to:
 [ROS Humble installation instructions](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html)
+
+For ROS2 Jazzy installation, please refer to:
+[ROS Jazzy installation instructions](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debians.html)
+
 
 Desktop-Full installation is recommend.
 
@@ -65,6 +70,13 @@ catkin_make # or you can use `catkin build`
 ```shell
 cd <ros_ws>
 colcon build --symlink-install
+```
+
+#### For ROS2 Jazzy:
+
+```shell
+source /opt/ros/jazzy/setup.sh
+./build.sh jazzy
 ```
 
 ### 2.4 Run Livox ROS Driver 2:
@@ -132,7 +144,7 @@ All internal parameters of Livox_ros_driver2 are in the launch file. Below are d
 
   **Note :**
 
-  Other parameters not mentioned in this table are not suggested to be changed unless fully understood.
+Other parameters not mentioned in this table are not suggested to be changed unless fully understood.
 
 &ensp;&ensp;&ensp;&ensp;***Livox_ros_driver2 pointcloud data detailed description :***
 
