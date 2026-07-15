@@ -29,7 +29,7 @@ Clone this repository into your workspace's `src` directory and build directly w
 export COLCON_WS=...
 
 cd ${COLCON_WS}/src
-git clone https://github.com/sfg-autonomous-systems/sfg_livox_ros_driver2 livox_ros_driver2
+git clone -b "${ROS_DISTRO}" https://github.com/sfg-autonomous-systems/sfg_livox_ros_driver2 livox_ros_driver2
 cd ..
 colcon build --packages-select livox_ros_driver2 --symlink-install
 ```
