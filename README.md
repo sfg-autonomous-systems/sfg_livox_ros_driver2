@@ -11,7 +11,7 @@ The official driver relies on custom shell scripts for building and defaults to 
 
 ## Changelog & Modifications
 
-* **`colcon` Compatibility:** Removed upstream build scripts; the package is now fully compatible with a standard `colcon build`.
+* **`colcon` Compatibility:** Removed upstream build scripts. The package is now fully compatible with `colcon build`.
 * **QoS Optimization:** Switched point cloud publishers to `BEST_EFFORT`.
 * **Modern Distribution Support:** Added support for ROS 2 kilted.
 * **`tf2` Tree Flexibility:** Separated `frame_id` parameters for IMU and point cloud data.
